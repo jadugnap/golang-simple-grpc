@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package = ".;pb_grpc";
+
+message Empty {}
+
+message BoxSpecification {
+    int32 height = 1;
+    int32 width = 2;
+    int32 depth = 3;
+}
+
+message Box {
+    int32 volume = 1;
+}
+
+service BoxLaboratory {
+    rpc MakeBox(BoxSpecification) returns (Box) {}
+}
